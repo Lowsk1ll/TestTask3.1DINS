@@ -12,12 +12,12 @@ public class MainPage {
     @FindBy(xpath = "//input[@class='search-form__field']")
     WebElement findField;
 
-    public MainPage(WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public MainPage(){
+        PageFactory.initElements(DriverWrapper.driver,this);
     }
 
-    public void find(WebDriver driver,String findWord){
-        WebDriverWait wait = new WebDriverWait(driver,5);
+    public void find(String findWord){
+        WebDriverWait wait = new WebDriverWait(DriverWrapper.driver,5);
         wait.until(ExpectedConditions.elementToBeClickable(findButton));
         findButton.click();
         wait.until(ExpectedConditions.elementToBeClickable(findField));

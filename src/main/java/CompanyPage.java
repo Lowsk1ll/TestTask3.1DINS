@@ -18,11 +18,11 @@ public class CompanyPage {
     @FindBy(xpath = "//*[@class='btn btn_blue btn_huge btn_full-width js-popup_save_btn']")
     WebElement saveButt;
 
-    public CompanyPage(WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public CompanyPage(){
+        PageFactory.initElements(DriverWrapper.driver,this);
     }
-    public void checkProfile(WebDriver driver){
-        WebDriverWait wait = new WebDriverWait(driver,5);
+    public void checkProfile(){
+        WebDriverWait wait = new WebDriverWait(DriverWrapper.driver,5);
         wait.until(ExpectedConditions.elementToBeClickable(profil));
         profil.click();
 
@@ -32,9 +32,9 @@ public class CompanyPage {
         return godOsnovaniya;
     }
 
-    public void ChangeLaunguage (WebDriver driver){
-        WebDriverWait wait = new WebDriverWait(driver,5);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+    public void ChangeLaunguage (){
+        WebDriverWait wait = new WebDriverWait(DriverWrapper.driver,5);
+        JavascriptExecutor js = (JavascriptExecutor) DriverWrapper.driver;
         js.executeScript("window.scrollBy(0,2500)");
         language.click();
         wait.until(ExpectedConditions.elementToBeClickable(engInt));

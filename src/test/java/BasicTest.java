@@ -11,14 +11,14 @@ public class BasicTest {
 
     @Test
     void Test(){
-        MainPage main = new MainPage(driverWrapper.driver);
-        SearchPage search = new SearchPage(driverWrapper.driver);
-        CompanyPage company = new CompanyPage(driverWrapper.driver);
-        main.find(driverWrapper.driver,"DINS");
-        search.openBlog(driverWrapper.driver);
-        company.checkProfile(driverWrapper.driver);
+        MainPage main = new MainPage();
+        SearchPage search = new SearchPage();
+        CompanyPage company = new CompanyPage();
+        main.find("DINS");
+        search.openBlog();
+        company.checkProfile();
         Assert.assertEquals(company.checkYear(),"1998 год");
-        company.ChangeLaunguage(driverWrapper.driver);
+        company.ChangeLaunguage();
         Assert.assertEquals(company.checkYear(),"Since 1998");
     }
     @AfterMethod

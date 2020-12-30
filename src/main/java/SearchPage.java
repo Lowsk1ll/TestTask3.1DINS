@@ -12,11 +12,11 @@ public class SearchPage {
     WebElement BLOG;
 
 
-    public SearchPage(WebDriver driver) {
-        PageFactory.initElements(driver,this);
+    public SearchPage() {
+        PageFactory.initElements(DriverWrapper.driver,this);
     }
-    public void openBlog(WebDriver driver){
-        WebDriverWait wait = new WebDriverWait(driver,5);
+    public void openBlog(){
+        WebDriverWait wait = new WebDriverWait(DriverWrapper.driver,5);
         wait.until(ExpectedConditions.elementToBeClickable(HUBS));
         HUBS.click();
         wait.until(ExpectedConditions.elementToBeClickable(BLOG));
