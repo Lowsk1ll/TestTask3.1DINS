@@ -16,10 +16,10 @@ public class BasicTest {
         CompanyPage company = new CompanyPage();
         main.find("DINS");
         search.openBlog();
-        company.checkProfile();
-        Assert.assertEquals(company.checkYear(),"1998 год");
+        company.CheckProfile();
+        Assert.assertEquals(company.CheckYear(),"1998 год");
         company.ChangeLaunguage();
-        Assert.assertEquals(company.checkYear(),"Since 1998");
+        Assert.assertEquals(company.CheckYear(),"Since 1998");
     }
     @AfterMethod
     void end(){driverWrapper.close();}
